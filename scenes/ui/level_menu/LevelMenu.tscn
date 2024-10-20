@@ -1,0 +1,175 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/ui/level_menu/LevelButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ui/level_menu/LevelMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/ui/Comfy Feeling.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/ui/BackButton.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 3 )
+
+[node name="LevelMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_top = 2.0
+margin_right = -10.0
+margin_bottom = 2.0
+script = ExtResource( 2 )
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -31.0
+margin_top = -21.0
+margin_right = 31.0
+margin_bottom = 17.0
+rect_scale = Vector2( 1, 0.994227 )
+color = Color( 0.494118, 0.529412, 0.623529, 1 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.037
+anchor_right = 0.5
+anchor_bottom = 0.037
+margin_left = -253.0
+margin_top = 0.0400009
+margin_right = 253.0
+margin_bottom = 254.04
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Level Select
+"
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BackButton" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.025
+anchor_top = 0.905
+anchor_right = 0.025
+anchor_bottom = 0.91
+
+[node name="LevelButtons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="LevelButton1" parent="LevelButtons" instance=ExtResource( 1 )]
+anchor_left = 0.24
+anchor_top = 0.221
+anchor_right = 0.24
+anchor_bottom = 0.221
+margin_left = 451.08
+margin_top = 230.16
+margin_right = 500.08
+margin_bottom = 279.16
+disabled = true
+locked = true
+
+[node name="LevelButton2" parent="LevelButtons" instance=ExtResource( 1 )]
+anchor_left = 0.46
+anchor_top = 0.221
+anchor_right = 0.46
+anchor_bottom = 0.221
+margin_left = 863.96
+margin_top = 230.16
+margin_right = 912.96
+margin_bottom = 279.16
+disabled = true
+level_num = "2"
+locked = true
+
+[node name="LevelButton3" parent="LevelButtons" instance=ExtResource( 1 )]
+anchor_left = 0.68
+anchor_top = 0.221
+anchor_right = 0.68
+anchor_bottom = 0.221
+margin_left = 1277.56
+margin_top = 230.16
+margin_right = 1326.56
+margin_bottom = 279.16
+disabled = true
+level_num = "3"
+locked = true
+
+[node name="LevelButton4" parent="LevelButtons" instance=ExtResource( 1 )]
+anchor_left = 0.24
+anchor_top = 0.496
+anchor_right = 0.24
+anchor_bottom = 0.496
+margin_left = 451.08
+margin_top = 516.16
+margin_right = 500.08
+margin_bottom = 565.16
+disabled = true
+level_num = "4"
+locked = true
+
+[node name="LevelButton5" parent="LevelButtons" instance=ExtResource( 1 )]
+anchor_left = 0.46
+anchor_top = 0.496
+anchor_right = 0.46
+anchor_bottom = 0.496
+margin_left = 863.96
+margin_top = 516.16
+margin_right = 912.96
+margin_bottom = 565.16
+disabled = true
+level_num = "5"
+locked = true
+
+[node name="LevelButton6" parent="LevelButtons" instance=ExtResource( 1 )]
+anchor_left = 0.68
+anchor_top = 0.496
+anchor_right = 0.68
+anchor_bottom = 0.496
+margin_left = 1277.56
+margin_top = 516.16
+margin_right = 1326.56
+margin_bottom = 565.16
+disabled = true
+level_num = "6"
+locked = true
+
+[node name="LevelButton7" parent="LevelButtons" instance=ExtResource( 1 )]
+anchor_left = 0.24
+anchor_top = 0.757
+anchor_right = 0.24
+anchor_bottom = 0.757
+margin_left = 451.08
+margin_top = 787.6
+margin_right = 500.08
+margin_bottom = 836.6
+disabled = true
+level_num = "7"
+locked = true
+
+[node name="LevelButton8" parent="LevelButtons" instance=ExtResource( 1 )]
+anchor_left = 0.46
+anchor_top = 0.757
+anchor_right = 0.46
+anchor_bottom = 0.757
+margin_left = 863.96
+margin_top = 787.6
+margin_right = 912.96
+margin_bottom = 836.6
+disabled = true
+level_num = "8"
+locked = true
+
+[node name="LevelButton9" parent="LevelButtons" instance=ExtResource( 1 )]
+anchor_left = 0.68
+anchor_top = 0.757
+anchor_right = 0.68
+anchor_bottom = 0.757
+margin_left = 1277.56
+margin_top = 787.6
+margin_right = 1326.56
+margin_bottom = 836.6
+disabled = true
+level_num = "9"
+locked = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]

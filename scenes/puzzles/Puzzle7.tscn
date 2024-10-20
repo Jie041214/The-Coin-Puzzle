@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/coins/NormalCoin.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/coins/HexagonalCoin.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/graphics/puzzles/circle_background.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 350.321
+
+[node name="Puzzle7" instance=ExtResource( 1 )]
+
+[node name="TileMap" parent="." index="0"]
+position = Vector2( -182, 2 )
+scale = Vector2( 0.812, 0.812 )
+show_collision = true
+tile_data = PoolIntArray( 131071, 1, 196609, 983030, 1073741829, 0, 917523, 1610612741, 0 )
+
+[node name="Pennies" parent="." index="1"]
+scale = Vector2( 1.98, 1.98 )
+
+[node name="NormalCoin" parent="Pennies" index="0" instance=ExtResource( 2 )]
+position = Vector2( -72.7273, -120.034 )
+scale = Vector2( 1.98, 1.98 )
+collision/safe_margin = 0.001
+
+[node name="NormalCoin2" parent="Pennies" index="1" instance=ExtResource( 2 )]
+position = Vector2( 21.9069, -118.571 )
+scale = Vector2( 1.98, 1.98 )
+collision/safe_margin = 0.001
+
+[node name="NormalCoin3" parent="Pennies" index="2" instance=ExtResource( 2 )]
+position = Vector2( -139.069, -49.7906 )
+scale = Vector2( 1.98, 1.98 )
+collision/safe_margin = 0.001
+
+[node name="NormalCoin4" parent="Pennies" index="3" instance=ExtResource( 2 )]
+position = Vector2( -26.3858, -39.0589 )
+scale = Vector2( 1.98, 1.98 )
+collision/safe_margin = 0.001
+
+[node name="NormalCoin5" parent="Pennies" index="4" instance=ExtResource( 2 )]
+position = Vector2( 87.7608, -50.7662 )
+scale = Vector2( 1.98, 1.98 )
+collision/safe_margin = 0.001
+
+[node name="NormalCoin6" parent="Pennies" index="5" instance=ExtResource( 2 )]
+position = Vector2( -91.2639, 30.2094 )
+scale = Vector2( 1.98, 1.98 )
+collision/safe_margin = 0.001
+
+[node name="NormalCoin7" parent="Pennies" index="6" instance=ExtResource( 2 )]
+position = Vector2( 38.0048, 26.7948 )
+scale = Vector2( 1.98, 1.98 )
+collision/safe_margin = 0.001
+
+[node name="NormalCoin8" parent="Pennies" index="7" instance=ExtResource( 2 )]
+position = Vector2( -63.4589, 118.502 )
+scale = Vector2( 1.98, 1.98 )
+collision/safe_margin = 0.001
+
+[node name="NormalCoin9" parent="Pennies" index="8" instance=ExtResource( 2 )]
+position = Vector2( 27.7607, 116.551 )
+scale = Vector2( 1.98, 1.98 )
+collision/safe_margin = 0.001
+
+[node name="HexagonalCoin" parent="Pennies" index="9" instance=ExtResource( 3 )]
+position = Vector2( 276.768, -103.535 )
+scale = Vector2( 1.8, 2 )
+
+[node name="HexagonalCoin2" parent="Pennies" index="10" instance=ExtResource( 3 )]
+position = Vector2( 276.768, -9.59593 )
+scale = Vector2( 1.8, 1.95 )
+
+[node name="HexagonalCoin3" parent="Pennies" index="11" instance=ExtResource( 3 )]
+position = Vector2( 276.768, 83.3334 )
+scale = Vector2( 1.8, 1.95 )
+
+[node name="HexagonalCoin4" parent="Pennies" index="12" instance=ExtResource( 3 )]
+position = Vector2( 373.737, -106.061 )
+scale = Vector2( 1.8, 1.95 )
+
+[node name="HexagonalCoin5" parent="Pennies" index="13" instance=ExtResource( 3 )]
+position = Vector2( 372.222, -13.1313 )
+scale = Vector2( 1.8, 1.95 )
+
+[node name="DetectedArea" parent="." index="2"]
+position = Vector2( -148, -4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectedArea" index="0"]
+position = Vector2( 96, 2 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" parent="." index="3"]
+position = Vector2( -16, 0 )
+scale = Vector2( 0.815, 0.815 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D" index="0"]
+position = Vector2( -91, -2 )
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="1"]
+position = Vector2( -91, -2 )
+polygon = PoolVector2Array( 36.9458, -464.286, -22.1676, -459.36, -87.4385, -444.581, -156.404, -417.488, -213.054, -384.236, -262.315, -346.059, -311.576, -294.335, -348.522, -243.842, -375.616, -192.118, -395.32, -140.394, -410.099, -83.7438, -416.256, -36.9458, -417.488, 28.3251, -408.867, 89.9015, -390.394, 156.404, -374.384, 197.044, -347.291, 245.074, -326.355, 275.862, -315.271, 290.64, -299.261, 310.345, -270.936, 339.901, -225.37, 376.847, -198.276, 394.089, -169.951, 411.33, -119.458, 434.729, -64.0395, 451.97, -9.85229, 461.823, 56.6501, 465.517, 124.384, 459.36, 193.35, 442.118, 246.305, 421.182, 293.103, 395.32, 334.975, 365.764, 370.69, 333.744, 402.709, 299.261, 437.192, 253.695, 470.443, 192.118, 492.611, 134.236, 507.389, 68.9655, 512.315, -1.23151, 508.621, -57.8818, 497.537, -112.069, 488.916, -144.089, 472.906, -185.961, 451.97, -229.064, 424.877, -269.704, 402.709, -298.03, 375.616, -328.818, 350.985, -350.985, 325.123, -371.921, 290.64, -395.32, 254.926, -415.025, 221.675, -429.803, 203.202, -437.192, 171.182, -447.044, 130.542, -455.665, 102.217, -460.591, 70.197, -463.054, 43.1034, -464.286, 43.1034, -434.729, 86.2068, -432.266, 114.532, -429.803, 146.552, -423.645, 178.571, -415.025, 219.212, -400.246, 256.158, -381.773, 289.409, -362.069, 316.502, -341.133, 348.522, -314.039, 370.69, -290.64, 392.857, -263.547, 411.33, -237.685, 426.108, -214.286, 440.887, -184.729, 449.507, -165.025, 461.823, -133.005, 472.906, -92.3645, 479.064, -59.1133, 480.296, -45.5665, 481.527, -20.936, 482.759, -2.46307, 480.296, 38.1774, 477.832, 67.734, 472.906, 92.3646, 465.517, 119.458, 456.896, 149.015, 447.044, 172.414, 433.497, 201.97, 417.488, 229.064, 403.941, 250, 383.005, 277.094, 363.3, 300.493, 339.901, 322.66, 311.576, 347.291, 293.103, 359.606, 273.399, 371.921, 257.389, 381.773, 233.99, 394.089, 203.202, 407.635, 177.34, 416.256, 139.162, 427.34, 114.313, 430.221, 97.1349, 432.675, 89.7729, 433.902, 73.822, 436.356, 13.6993, 433.902, -8.3866, 431.448, -45.5665, 426.108, -71.4286, 419.951, -104.68, 408.867, -137.931, 395.32, -168.719, 379.31, -189.655, 365.764, -214.286, 348.522, -233.99, 333.744, -253.695, 315.271, -275.862, 293.103, -294.335, 270.936, -311.576, 247.537, -327.586, 222.906, -339.902, 199.507, -347.037, 186.049, -357.143, 162.562, -365.764, 137.931, -373.153, 114.532, -379.31, 91.133, -383.005, 65.2709, -385.468, 46.798, -386.7, 32.0197, -387.931, 24.6306, -387.931, -13.5468, -386.7, -23.399, -386.7, -32.0197, -385.468, -51.7241, -381.773, -72.6601, -380.542, -81.2808, -375.616, -102.217, -370.69, -120.69, -364.532, -141.626, -357.143, -162.562, -347.291, -183.498, -333.744, -210.591, -318.966, -235.222, -301.724, -259.852, -283.251, -282.02, -277.094, -290.64, -266.01, -301.724, -247.537, -320.197, -231.527, -333.744, -209.36, -350.985, -185.961, -366.995, -156.404, -384.236, -120.69, -401.478, -89.9016, -412.562, -57.8818, -422.414, -23.399, -429.803, 2.46301, -432.266, 40.6404, -434.729, 40.6404, -464.286 )

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/ui/Comfy Feeling.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/levels/Level.gd" type="Script" id=2]
+[ext_resource path="res://scenes/ui/InGameUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/finish_menu/FinishMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ui/finish_menu/LastLevelFinishMenu.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 1 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="UI" type="Node" parent="."]
+
+[node name="InGameUI" parent="UI" instance=ExtResource( 3 )]
+
+[node name="FinishMenu" parent="UI" instance=ExtResource( 4 )]
+visible = false
+
+[node name="LevelNumber" type="Label" parent="UI"]
+anchor_left = 0.03
+anchor_top = 0.95
+anchor_right = 0.03
+anchor_bottom = 0.95
+margin_top = -51.0
+margin_right = 88.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+custom_fonts/font = SubResource( 1 )
+text = "Level"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LashLevelFinishMenu" parent="UI" instance=ExtResource( 5 )]
+visible = false

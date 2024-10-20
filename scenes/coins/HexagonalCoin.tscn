@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/graphics/coins/Coin_Spin_Animation_A_outline.png" type="Texture" id=1]
+[ext_resource path="res://scenes/coins/Coin.tscn" type="PackedScene" id=2]
+
+[node name="HexagonalCoin" instance=ExtResource( 2 )]
+scale = Vector2( 1.9, 2 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." index="0"]
+visible = false
+position = Vector2( -0.776226, -0.954977 )
+scale = Vector2( 0.995924, 0.994729 )
+polygon = PoolVector2Array( -21.7492, -0.393388, -21.7258, 0.261931, -11.1006, 17.4397, -10.6597, 17.555, 10.4586, 17.5698, 10.9374, 17.2921, 21.5038, 0.240688, 21.5571, -0.395463, 10.9853, -17.4189, 10.4263, -17.7547, -11.0105, -17.6451 )
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2( 0.1, 0.095 )
+texture = ExtResource( 1 )
+hframes = 4
+vframes = 4
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="CoinArea" index="0"]
+position = Vector2( -0.776226, -0.954977 )
+scale = Vector2( 0.995924, 0.994729 )
+polygon = PoolVector2Array( -21.7177, -0.390833, -21.6888, 0.257114, -11.0781, 17.4179, -10.6446, 17.5278, 10.4611, 17.5396, 10.9153, 17.2687, 21.4723, 0.241406, 21.5218, -0.390833, 10.961, -17.3936, 10.4142, -17.7139, -10.9753, -17.6046 )

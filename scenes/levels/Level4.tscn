@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/puzzles/Puzzle4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/levels/Level.tscn" type="PackedScene" id=2]
+
+[node name="Level4" instance=ExtResource( 2 )]
+
+[node name="LevelNumber" parent="UI" index="2"]
+text = "Level 4"
+
+[node name="Puzzle4" parent="." index="1" instance=ExtResource( 1 )]

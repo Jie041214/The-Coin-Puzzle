@@ -1,0 +1,148 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/graphics/puzzles/square_background.png" type="Texture" id=2]
+[ext_resource path="res://scenes/coins/HexagonalCoin.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 306, 307 )
+
+[node name="Puzzle5" instance=ExtResource( 1 )]
+position = Vector2( 933, 563 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 560.0 ],
+"_edit_vertical_guides_": [ 960.0 ]
+}
+
+[node name="Pennies" parent="." index="0"]
+scale = Vector2( 2.05, 2.05 )
+
+[node name="HexagonalCoin" parent="Pennies" index="0" instance=ExtResource( 3 )]
+position = Vector2( 189.756, -127.317 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin2" parent="Pennies" index="1" instance=ExtResource( 3 )]
+position = Vector2( 238.049, -127.317 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin3" parent="Pennies" index="2" instance=ExtResource( 3 )]
+position = Vector2( 286.341, -127.317 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin4" parent="Pennies" index="3" instance=ExtResource( 3 )]
+position = Vector2( 334.146, -127.317 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin5" parent="Pennies" index="4" instance=ExtResource( 3 )]
+position = Vector2( 382.439, -127.317 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin6" parent="Pennies" index="5" instance=ExtResource( 3 )]
+position = Vector2( 430.732, -127.805 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin7" parent="Pennies" index="6" instance=ExtResource( 3 )]
+position = Vector2( 189.756, -55.6098 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin8" parent="Pennies" index="7" instance=ExtResource( 3 )]
+position = Vector2( 238.049, -55.6098 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin9" parent="Pennies" index="8" instance=ExtResource( 3 )]
+position = Vector2( 286.341, -55.6098 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin10" parent="Pennies" index="9" instance=ExtResource( 3 )]
+position = Vector2( 334.146, -55.6098 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin11" parent="Pennies" index="10" instance=ExtResource( 3 )]
+position = Vector2( 382.439, -55.6098 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin12" parent="Pennies" index="11" instance=ExtResource( 3 )]
+position = Vector2( 430.732, -56.0976 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin13" parent="Pennies" index="12" instance=ExtResource( 3 )]
+position = Vector2( 189.756, 16.0975 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin14" parent="Pennies" index="13" instance=ExtResource( 3 )]
+position = Vector2( 238.049, 16.0975 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin15" parent="Pennies" index="14" instance=ExtResource( 3 )]
+position = Vector2( 286.341, 16.0975 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin16" parent="Pennies" index="15" instance=ExtResource( 3 )]
+position = Vector2( 334.146, 16.0975 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin17" parent="Pennies" index="16" instance=ExtResource( 3 )]
+position = Vector2( 382.439, 16.0975 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin18" parent="Pennies" index="17" instance=ExtResource( 3 )]
+position = Vector2( 430.732, 15.6098 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin19" parent="Pennies" index="18" instance=ExtResource( 3 )]
+position = Vector2( 189.756, 87.8048 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin20" parent="Pennies" index="19" instance=ExtResource( 3 )]
+position = Vector2( 238.049, 87.8048 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin21" parent="Pennies" index="20" instance=ExtResource( 3 )]
+position = Vector2( 286.341, 87.8048 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin22" parent="Pennies" index="21" instance=ExtResource( 3 )]
+position = Vector2( 334.146, 87.8048 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin25" parent="Pennies" index="22" instance=ExtResource( 3 )]
+position = Vector2( 189.756, 159.512 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin26" parent="Pennies" index="23" instance=ExtResource( 3 )]
+position = Vector2( 238.049, 159.512 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin27" parent="Pennies" index="24" instance=ExtResource( 3 )]
+position = Vector2( 286.341, 159.512 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin28" parent="Pennies" index="25" instance=ExtResource( 3 )]
+position = Vector2( 334.146, 159.512 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin23" parent="Pennies" index="26" instance=ExtResource( 3 )]
+position = Vector2( 382.439, 87.8049 )
+scale = Vector2( 1.1, 2 )
+
+[node name="HexagonalCoin24" parent="Pennies" index="27" instance=ExtResource( 3 )]
+position = Vector2( 430.732, 87.3171 )
+scale = Vector2( 1.1, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectedArea" index="0"]
+position = Vector2( -70, -5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" parent="." index="2"]
+scale = Vector2( 0.715801, 0.715801 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D" index="0"]
+position = Vector2( -106.175, -11.1763 )
+scale = Vector2( 0.94, 0.94 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="1"]
+polygon = PoolVector2Array( 339.742, 427.537, -531.151, 427.524, -531.319, -442.039, -560.43, -474.905, -563.705, -474.818, -563.792, 460.018, 372.033, 459.957, 372.106, -474.633, -558.291, -474.818, -530.191, -442.26, 339.785, -442.74 )

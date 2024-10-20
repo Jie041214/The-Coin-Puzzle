@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/ui/Comfy Feeling.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/ui/finish_menu/HomeButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/ui/finish_menu/RetryButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/finish_menu/NextLevelButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ui/finish_menu/FinishMenu.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[node name="FinishMenu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.752941 )
+
+[node name="LevelComplete" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.25
+margin_left = -381.5
+margin_right = 381.5
+margin_bottom = 153.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Level Complete"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.397
+anchor_top = 0.5
+anchor_right = 0.397
+anchor_bottom = 0.5
+margin_left = -123.5
+margin_top = -24.0
+margin_right = 123.5
+margin_bottom = 24.0
+rect_scale = Vector2( 2.6, 2.6 )
+custom_constants/separation = 50
+
+[node name="HomeButton" parent="HBoxContainer" groups=["Button"] instance=ExtResource( 2 )]
+mouse_default_cursor_shape = 1
+
+[node name="RetryButton" parent="HBoxContainer" groups=["Button"] instance=ExtResource( 3 )]
+margin_left = 99.0
+margin_right = 148.0
+mouse_default_cursor_shape = 1
+
+[node name="NextLevelButton" parent="HBoxContainer" groups=["Button"] instance=ExtResource( 4 )]
+margin_left = 198.0
+margin_right = 247.0
+mouse_default_cursor_shape = 1
+
+[node name="HomeToolTip" type="Label" parent="."]
+visible = false
+anchor_left = 0.366
+anchor_top = 0.405
+anchor_right = 0.366
+anchor_bottom = 0.405
+margin_left = -46.5
+margin_right = 46.5
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Home"
+
+[node name="NextLevelToolTip" type="Label" parent="."]
+visible = false
+anchor_left = 0.635
+anchor_top = 0.405
+anchor_right = 0.635
+anchor_bottom = 0.405
+margin_left = -90.5
+margin_right = 90.5
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Next Level"
+
+[node name="RetryToolTip" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.405
+anchor_right = 0.5
+anchor_bottom = 0.405
+margin_left = -59.0
+margin_right = 59.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Retry?"
+
+[connection signal="mouse_entered" from="HBoxContainer/HomeButton" to="." method="_on_HomeButton_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/HomeButton" to="." method="_on_HomeButton_mouse_exited"]
+[connection signal="pressed" from="HBoxContainer/HomeButton" to="." method="_on_HomeButton_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/RetryButton" to="." method="_on_RetryButton_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/RetryButton" to="." method="_on_RetryButton_mouse_exited"]
+[connection signal="pressed" from="HBoxContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/NextLevelButton" to="." method="_on_NextLevelButton_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer/NextLevelButton" to="." method="_on_NextLevelButton_mouse_exited"]
+[connection signal="pressed" from="HBoxContainer/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]

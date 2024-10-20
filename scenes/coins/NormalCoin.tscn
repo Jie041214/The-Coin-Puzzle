@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/coins/Coin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/graphics/coins/star coin normal_outline.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 22.0
+
+[node name="NormalCoin" instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
+position = Vector2( -0.732117, -0.331868 )
+scale = Vector2( 1.019, 1.019 )
+shape = SubResource( 1 )
+
+[node name="CoinArea" parent="." index="2"]
+position = Vector2( -0.701542, -0.280617 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoinArea" index="0"]
+visible = false
+scale = Vector2( 1.014, 1.014 )
+shape = SubResource( 1 )

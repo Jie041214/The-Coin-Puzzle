@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/musics/sinnesloschen-beam-117362.mp3" type="AudioStream" id=1]
+[ext_resource path="res://globals/SoundManager.gd" type="Script" id=2]
+[ext_resource path="res://assets/sfx/click-b.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sfx/tap-b.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sfx/level-complete.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sfx/Rapid knocks on the door-yoyosound.com.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sfx/place-with-colliding.wav" type="AudioStream" id=7]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource( 2 )
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 1 )
+volume_db = -20.0
+autoplay = true
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="ClickButton" type="AudioStreamPlayer" parent="SFX"]
+pause_mode = 2
+stream = ExtResource( 3 )
+volume_db = -26.0
+pitch_scale = 0.93
+bus = "SFX"
+
+[node name="ClickCheckbox" type="AudioStreamPlayer" parent="SFX"]
+pause_mode = 2
+stream = ExtResource( 4 )
+volume_db = -23.0
+pitch_scale = 0.73
+bus = "SFX"
+
+[node name="LevelComplete" type="AudioStreamPlayer" parent="SFX"]
+pause_mode = 2
+stream = ExtResource( 5 )
+volume_db = -23.0
+
+[node name="HitTable" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 6 )
+volume_db = -26.0
+pitch_scale = 1.26
+
+[node name="PickUp" type="AudioStreamPlayer" parent="SFX"]
+volume_db = -23.0
+pitch_scale = 2.04
+
+[node name="PlaceWithColliding" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 7 )
+volume_db = -23.0

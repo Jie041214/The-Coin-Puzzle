@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/ui/BackButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/Comfy Feeling.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/ui/SettingMenu.gd" type="Script" id=3]
+[ext_resource path="res://assets/ui/KenneyUI/kenneyUI.tres" type="Theme" id=4]
+[ext_resource path="res://assets/ui/item_frames/15.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 512, 512 )
+margin_left = 100.238
+margin_right = 98.8061
+margin_top = 104.534
+margin_bottom = 100.238
+
+[sub_resource type="DynamicFont" id=1]
+size = 62
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="SettingMenu" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -53.0
+margin_top = -43.0
+margin_right = 46.0
+margin_bottom = 42.0
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BackButton" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.025
+anchor_top = 0.905
+anchor_right = 0.025
+anchor_bottom = 0.905
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 0.776471, 0.635294, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -454.0
+margin_top = -417.0
+margin_right = 454.0
+margin_bottom = 417.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -254.0
+margin_top = -274.0
+margin_right = 277.0
+margin_bottom = 274.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+margin_right = 531.0
+margin_bottom = 548.0
+custom_constants/separation = 70
+
+[node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+margin_right = 531.0
+margin_bottom = 80.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Settings"
+align = 1
+
+[node name="Resolution" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 150.0
+margin_right = 531.0
+margin_bottom = 216.0
+custom_constants/separation = 50
+
+[node name="ResolutionLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/Resolution"]
+margin_top = 7.0
+margin_right = 176.0
+margin_bottom = 58.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Resolution"
+
+[node name="ResolutionButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/Resolution"]
+unique_name_in_owner = true
+margin_left = 226.0
+margin_right = 512.324
+margin_bottom = 66.251
+mouse_default_cursor_shape = 1
+custom_colors/font_color_disabled = Color( 0, 0, 0, 0.533333 )
+custom_constants/hseparation = 80
+custom_fonts/font = SubResource( 3 )
+text = "1920x1080"
+
+[node name="Fullscreen" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 286.0
+margin_right = 531.0
+margin_bottom = 337.0
+custom_constants/separation = 50
+
+[node name="FullscreenLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/Fullscreen"]
+margin_right = 172.0
+margin_bottom = 51.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Fullscreen"
+
+[node name="FullScreenCheckbox" type="CheckBox" parent="Panel/MarginContainer/VBoxContainer/Fullscreen"]
+unique_name_in_owner = true
+margin_left = 222.0
+margin_right = 258.0
+margin_bottom = 51.0
+mouse_default_cursor_shape = 1
+pressed = true
+
+[node name="MasterVolume" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 407.0
+margin_right = 531.0
+margin_bottom = 500.0
+
+[node name="MasterVolumeLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/MasterVolume"]
+margin_right = 531.0
+margin_bottom = 51.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Master Volume"
+
+[node name="MasterVolumeHSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer/MasterVolume"]
+unique_name_in_owner = true
+margin_top = 51.0
+margin_right = 531.0
+margin_bottom = 93.0
+mouse_default_cursor_shape = 1
+theme = ExtResource( 4 )
+step = 2.0
+
+[connection signal="back" from="BackButton" to="." method="_on_BackButton_back"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="item_selected" from="Panel/MarginContainer/VBoxContainer/Resolution/ResolutionButton" to="." method="_on_ResolutionButton_item_selected"]
+[connection signal="toggled" from="Panel/MarginContainer/VBoxContainer/Fullscreen/FullScreenCheckbox" to="." method="_on_CheckBox_toggled"]
+[connection signal="value_changed" from="Panel/MarginContainer/VBoxContainer/MasterVolume/MasterVolumeHSlider" to="." method="_on_MasterVolumeHSlider_value_changed"]

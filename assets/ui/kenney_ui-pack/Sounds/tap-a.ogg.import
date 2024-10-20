@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tap-a.ogg-358e88dc2207acb751051d4b5fabbff8.oggstr"
+
+[deps]
+
+source_file="res://assets/ui/kenney_ui-pack/Sounds/tap-a.ogg"
+dest_files=[ "res://.import/tap-a.ogg-358e88dc2207acb751051d4b5fabbff8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

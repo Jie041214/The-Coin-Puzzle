@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/graphics/puzzles/16Penny_background.png" type="Texture" id=2]
+[ext_resource path="res://scenes/coins/NormalCoin.tscn" type="PackedScene" id=4]
+
+[node name="Puzzle8" instance=ExtResource( 1 )]
+
+[node name="Pennies" parent="." index="0"]
+scale = Vector2( 1.98, 1.98 )
+
+[node name="NormalCoin" parent="Pennies" index="0" instance=ExtResource( 4 )]
+position = Vector2( -148.485, 159.596 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin2" parent="Pennies" index="1" instance=ExtResource( 4 )]
+position = Vector2( -62.6263, 160.101 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin3" parent="Pennies" index="2" instance=ExtResource( 4 )]
+position = Vector2( 54.5454, 159.091 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin4" parent="Pennies" index="3" instance=ExtResource( 4 )]
+position = Vector2( 143.939, 158.586 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin5" parent="Pennies" index="4" instance=ExtResource( 4 )]
+position = Vector2( -4.54544, 97.9798 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin6" parent="Pennies" index="5" instance=ExtResource( 4 )]
+position = Vector2( -149.495, 74.7475 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin7" parent="Pennies" index="6" instance=ExtResource( 4 )]
+position = Vector2( -73.2323, 36.8687 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin8" parent="Pennies" index="7" instance=ExtResource( 4 )]
+position = Vector2( 97.9798, 86.3637 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin9" parent="Pennies" index="8" instance=ExtResource( 4 )]
+position = Vector2( -148.99, -31.8182 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin10" parent="Pennies" index="9" instance=ExtResource( 4 )]
+position = Vector2( -65.1515, -47.9798 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin11" parent="Pennies" index="10" instance=ExtResource( 4 )]
+position = Vector2( 6.56567, 8.58586 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin12" parent="Pennies" index="11" instance=ExtResource( 4 )]
+position = Vector2( 14.1414, -86.8687 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin13" parent="Pennies" index="12" instance=ExtResource( 4 )]
+position = Vector2( -149.495, -120.202 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin14" parent="Pennies" index="13" instance=ExtResource( 4 )]
+position = Vector2( -65.1515, -133.333 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin15" parent="Pennies" index="14" instance=ExtResource( 4 )]
+position = Vector2( 90.9091, 2.0202 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="NormalCoin16" parent="Pennies" index="15" instance=ExtResource( 4 )]
+position = Vector2( 366.162, 8.58585 )
+scale = Vector2( 1.88, 1.88 )
+
+[node name="DetectedArea" parent="." index="1"]
+position = Vector2( -148, -4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DetectedArea" index="0"]
+polygon = PoolVector2Array( -220, -370, -98, -346, 75, -302, 277, -152, 442, 112, 511, 390, -221, 392 )
+
+[node name="StaticBody2D" parent="." index="2"]
+scale = Vector2( 0.975, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D" index="0"]
+position = Vector2( -55.3846, -7 )
+scale = Vector2( 0.975, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="1"]
+polygon = PoolVector2Array( -423.59, -428, -423.59, 433, 419.487, 434, 418.462, 389, 414.359, 348, 407.179, 294, 398.974, 248, 386.667, 194, 373.333, 149, 355.897, 95, 342.564, 62, 322.051, 15, 306.667, -16, 283.077, -58, 270.769, -78, 245.128, -116, 222.564, -146, 190.769, -183, 167.179, -208, 145.641, -228, 131.282, -241, 110.769, -258, 90.2563, -274, 62.5641, -294, 43.0769, -307, 15.3846, -323, -30.7692, -347, -73.8462, -366, -123.077, -384, -173.333, -398, -235.897, -412, -288.205, -420, -320, -423, -347.692, -426, -414.359, -428, -391.795, -398, -326.154, -394, -272.82, -387, -236.923, -381, -192.82, -372, -157.949, -363, -108.718, -347, -77.9487, -335, -57.4359, -326, -14.359, -305, 13.3333, -290, 38.9744, -274, 62.5641, -257, 85.1282, -241, 117.949, -213, 145.641, -188, 192.82, -136, 219.487, -101, 238.974, -72, 263.59, -33, 282.051, 0, 297.436, 32, 312.82, 67, 325.128, 98, 332.308, 118, 343.59, 151, 353.846, 185, 370.256, 254, 380.513, 309, 386.667, 362, 389.744, 402, -391.795, 402, -391.795, -398 )
